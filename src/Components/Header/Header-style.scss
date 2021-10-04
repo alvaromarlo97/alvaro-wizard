@@ -1,0 +1,28 @@
+@import '../../styles/base.scss';
+
+.header{
+    display: flex;
+    justify-content: center;
+    background-color: $light-green-color;
+    width: 100%;
+    height: 8em;
+}
+.header-container{ 
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    background-color: $green-color;
+    width: 25em;
+    height: 8em;
+}
+.number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:$white;
+    background-color: $dark-green-color;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
