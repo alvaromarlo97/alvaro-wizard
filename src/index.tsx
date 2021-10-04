@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Header from './Components/Header/Header';
+import FirstPage from './pages/First-Page/First-Page';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
+    <FirstPage />
   </React.StrictMode>,
   document.getElementById('root'),
 );
