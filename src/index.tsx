@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './index.css';
-import FirstPage from './pages/First-Page/First-Page';
+// import FirstPage from './pages/First-Page/First-Page';
+import SecondPage from './pages/Second-Page/Second-Page';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={configureStore()}>
-      <FirstPage />
+      <SecondPage />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),

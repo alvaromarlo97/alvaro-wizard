@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import loadAge from '../../redux/actions/login-creators';
 
 import './Age-check-style.scss';
@@ -8,11 +8,9 @@ export default function AgeCheck() {
   const [checked, setChecked] = useState(false);
   const handleClick = () => setChecked(!checked);
   const dispatch = useDispatch();
-  const data = useSelector((store : any) => store?.Age);
 
   return (
     <div className="container">
-      <h1>{data}</h1>
       <h1 className="welcome">Welcome to Alvaro´s test</h1>
       <h2 className="main-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
