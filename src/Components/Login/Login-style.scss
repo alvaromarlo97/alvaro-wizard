@@ -1,0 +1,20 @@
+@import '../../styles/base.scss';
+
+.user-password {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.clue-text-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.clue-text-info{
+    background-color:blue;
+    color: $white;
+    text-align: center;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+}
