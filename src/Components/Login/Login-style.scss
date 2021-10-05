@@ -1,9 +1,39 @@
 @import '../../styles/base.scss';
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5em 0 5em;
 
+}
+.user-name-input{
+    width: 40em;
+    height: 2em;
+}
+input[type=text]:focus{
+    outline-color: $light-green-color;
+}
 .user-password {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+}
+.new-password-container{
+    display: flex;
+align-items: center;}
+.new-password-input{
+    width: 15em;
+    height: 2em;
+}
+.new-password-button{
+    margin-left: -30px;
+    width: 2em;
+    height: 2em;
+}
+input[type=password]:focus{
+    outline-color: $light-green-color;
 }
 .clue-text-container{
     display: flex;

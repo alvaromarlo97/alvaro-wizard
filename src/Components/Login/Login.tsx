@@ -5,27 +5,38 @@ import './Login-style.scss';
 
 export default function Login() {
   // const data = useSelector((store : any) => store?.Age);
+  function toggle(id : string):void {
+    const input : any = document.getElementById(id);
+
+    if (input.type === 'password') {
+      input.type = 'text';
+    } else {
+      input.type = 'password';
+    }
+  }
   return (
     <div className="main-container">
-      <h1 className="trial-text">Login for trial</h1>
+      <div className="trial-text-container">
+        <h1 className="trial-text">Login for trial</h1>
+      </div>
       <div className="user-data">
         <div className="user-name">
           <h3 className="user-name-text">Crea tu Usuario</h3>
-          <input type="text" className="user-name-input" />
+          <input type="text" className="user-name-input" placeholder="Introduce tu usuario" />
         </div>
         <div className="user-password">
           <div className="new-password">
             <h3 className="new-password-text">Crea tu Contraseña</h3>
             <div className="new-password-container">
-              <input type="text" className="new-password-input" />
-              <button type="button" className="new-password-button" />
+              <input type="password" className="new-password-input" id="password" />
+              <button type="button" className="new-password-button" onClick={() => toggle('password')} />
             </div>
           </div>
           <div className="new-password">
-            <h3 className="new-password-text">repite tu Contraseña</h3>
+            <h3 className="new-password-text">Repite tu Contraseña</h3>
             <div className="new-password-container">
-              <input type="text" className="new-password-input" />
-              <button type="button" className="new-password-button" />
+              <input type="password" className="new-password-input" id="passwordR" />
+              <button type="button" className="new-password-button" onClick={() => toggle('passwordR')} />
             </div>
 
           </div>
@@ -46,6 +57,10 @@ export default function Login() {
             Max60
           </div>
 
+        </div>
+        <div className="navigation-container">
+          <button type="button" className="back">Atras</button>
+          <button type="button" className="next">Siguiente</button>
         </div>
       </div>
 
