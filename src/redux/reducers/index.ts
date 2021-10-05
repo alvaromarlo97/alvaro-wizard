@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
-import { AgeValidation, LoginUserData } from './login-reducers';
+import LoginUserDataReducer from './login-reducer';
+import AgeReducer from './age-reducer';
 
 export default combineReducers({
-  Age: AgeValidation,
-  User: LoginUserData,
+  Age: AgeReducer,
+  User: LoginUserDataReducer,
 });
