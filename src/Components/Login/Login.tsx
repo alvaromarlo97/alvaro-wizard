@@ -30,7 +30,7 @@ export default function Login() {
 
   const strengthBadge : any = document.getElementById('security-check');
 
-  const strongPassword : any = new RegExp('(?=.*[A-Z])(?=.*[0-9])(?=.{8,24})');
+  const strongPassword : any = new RegExp('(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
   const mediumPassword : any = new RegExp(/[A-Z]/);
 
   function StrengthChecker(PasswordParameter : any) {
@@ -75,6 +75,7 @@ export default function Login() {
                 type="password"
                 className="new-password-input"
                 id="password"
+                maxLength={24}
                 onChange={(() => StrengthChecker(userData))}
               />
               <button

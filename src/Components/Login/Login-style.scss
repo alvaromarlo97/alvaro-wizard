@@ -33,7 +33,7 @@ align-items: center;}
     width: 2em;
     height: 2em;
     background-image: url('../../assets/img/eye.png');
-    background-color: #FFFFFF;
+    background-color: $white;
 	color: inherit;
 	border: none;
 	padding: 0;
@@ -46,7 +46,7 @@ align-items: center;}
     width: 2em;
     height: 2em;
     background-image: url('../../assets/img/private.png');
-    background-color: #FFFFFF;
+    background-color: $white;
 	color: inherit;
 	border: none;
 	padding: 0;
@@ -60,10 +60,11 @@ input[type=password]:focus{
 .password-security{
     display:flex;
     position: relative;
+    border-radius: 5px;
     width: 204px;
-    height: 8px;
+    height: 6px;
     margin-left: 2px;
-    margin-top: -10px;
+    margin-top: -8px;
 }
 .clue-text-container{
     display: flex;
