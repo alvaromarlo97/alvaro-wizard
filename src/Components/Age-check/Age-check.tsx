@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import loadAge from '../../redux/actions/login-creators';
 
 import './Age-check-style.scss';
@@ -31,14 +32,16 @@ export default function AgeCheck() {
           sus datos según a política de protección de datos vigente.
         </p>
       </div>
-      <input
-        type="button"
-        onClick={() => dispatch(loadAge(checked))}
-        value="Next"
-        className="next"
-        disabled={!checked}
-      />
+      <Link to="/login">
+        <input
+          type="button"
+          onClick={() => dispatch(loadAge(checked))}
+          value="Next"
+          className="nextPage"
+          disabled={!checked}
+        />
 
+      </Link>
     </div>
   );
 }

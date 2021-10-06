@@ -1,16 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import {
+  BrowserRouter, Route, Switch,
+} from 'react-router-dom';
 import './index.css';
-// import FirstPage from './pages/First-Page/First-Page';
-import SecondPage from './pages/Second-Page/Second-Page';
+import Header from './Components/Header/Header';
+import Login from './Components/Login/Login';
+import AgeCheck from './Components/Age-check/Age-check';
+// import SecondPage from './pages/Second-Page/Second-Page';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={configureStore()}>
-      <SecondPage />
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={AgeCheck} />
+          <Route path="/login" component={Login} />
+        </Switch>
+
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),

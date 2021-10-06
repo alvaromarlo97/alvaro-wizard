@@ -2,7 +2,8 @@
 /* eslint-disable no-useless-escape */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUserData } from '../../redux/actions/login-creators';
+import { Link } from 'react-router-dom';
+import { loginUserData, loadPage } from '../../redux/actions/login-creators';
 import './Login-style.scss';
 
 export default function Login() {
@@ -108,9 +109,6 @@ export default function Login() {
 
           </div>
         </div>
-        <p className="clue-info">
-          También puedes crear una pista que te ayude a recordar tu contraseña
-        </p>
         <div className="clue">
           <div className="clue-text-container">
             <h3 className="clue-text">Crea tu pista para recordar tu contraseña (opcional)</h3>
@@ -123,8 +121,30 @@ export default function Login() {
 
         </div>
         <div className="navigation-container">
-          <button type="button" className="back">Atras</button>
-          <button type="button" className="next">Siguiente</button>
+          <Link to="/">
+            <button
+              type="button"
+              className="back"
+              onClick={() => {
+                dispatch(loadPage(1));
+              }}
+            >
+              Atras
+
+            </button>
+          </Link>
+          <Link to="/login">
+            <button
+              type="button"
+              className="next"
+              onClick={() => {
+                dispatch(loadPage(3));
+              }}
+            >
+              Siguiente
+
+            </button>
+          </Link>
         </div>
       </div>
 

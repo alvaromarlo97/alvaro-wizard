@@ -1,5 +1,5 @@
 @import '../../styles/base.scss';
-$bg-img: '../../assets/img/eye.png';
+
 .main-container{
     display: flex;
     flex-direction: column;
@@ -66,6 +66,9 @@ input[type=password]:focus{
     margin-left: 2px;
     margin-top: -8px;
 }
+.clue{
+    margin-top: 2em;
+}
 .clue-text-container{
     display: flex;
     flex-direction: row;
@@ -93,7 +96,6 @@ input[type=password]:focus{
     width: 5em;
     height: 2em;
     background-color: $white;
-	color: inherit;
 	border: none;
 	padding: 0;
 	font: inherit;

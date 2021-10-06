@@ -20,3 +20,13 @@ export function loginUserData(userData: any) {
     });
   };
 }
+export function loadPage(page: any) {
+  return (dispatch : any) => {
+    const Page = page;
+    dispatch({
+      type: actionTypes.LOAD_USER,
+      data: Page,
+
+    });
+  };
+}
