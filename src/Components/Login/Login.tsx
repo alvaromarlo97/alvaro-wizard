@@ -1,10 +1,19 @@
-import React from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { loginUserData } from '../../redux/actions/login-creators';
+/* eslint-disable no-useless-escape */
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUserData } from '../../redux/actions/login-creators';
 import './Login-style.scss';
 
 export default function Login() {
   // const data = useSelector((store : any) => store?.Age);
+  const password : any = document.getElementById('password');
+
+  const dispatch = useDispatch();
+  const userData: any = useSelector((store : any) => store?.User);
+  const [userPassword, setUserPassword] = useState('');
+  useEffect(() => {
+    setUserPassword(password?.value);
+  }, []);
   function toggle(id : string):void {
     const input : any = document.getElementById(id);
 
@@ -14,6 +23,35 @@ export default function Login() {
       input.type = 'password';
     }
   }
+
+  const strengthBadge : any = document.getElementById('security-check');
+
+  const strongPassword : any = new RegExp('(?=.*[A-Z])(?=.*[0-9])(?=.{8,24})');
+  const mediumPassword : any = new RegExp(/[A-Z]/);
+
+  function StrengthChecker(PasswordParameter : any) {
+    if (strongPassword.test(PasswordParameter)) {
+      strengthBadge.style.backgroundColor = 'green';
+      strengthBadge.style.width = '204px';
+    } else if (mediumPassword.test(PasswordParameter)) {
+      strengthBadge.style.backgroundColor = 'orange';
+      strengthBadge.style.width = '100px';
+    } else {
+      strengthBadge.style.backgroundColor = 'red';
+      strengthBadge.style.width = '50px';
+    }
+  }
+
+  password?.addEventListener('input', () => {
+    if (userPassword?.length !== 0) {
+      strengthBadge.style.display = 'block';
+    } else {
+      strengthBadge.style.display = 'none';
+    }
+    dispatch(loginUserData(password?.value));
+    strengthBadge.style.display = 'block';
+  });
+
   return (
     <div className="main-container">
       <div className="trial-text-container">
@@ -28,15 +66,28 @@ export default function Login() {
           <div className="new-password">
             <h3 className="new-password-text">Crea tu Contraseña</h3>
             <div className="new-password-container">
-              <input type="password" className="new-password-input" id="password" />
+              <input
+                type="password"
+                className="new-password-input"
+                id="password"
+                onChange={(() => StrengthChecker(userData))}
+              />
               <button type="button" className="new-password-button" onClick={() => toggle('password')} />
             </div>
+            <div className="password-security" id="security-check" />
           </div>
           <div className="new-password">
             <h3 className="new-password-text">Repite tu Contraseña</h3>
             <div className="new-password-container">
               <input type="password" className="new-password-input" id="passwordR" />
-              <button type="button" className="new-password-button" onClick={() => toggle('passwordR')} />
+              <button
+                type="button"
+                className="new-password-button"
+                onClick={() => {
+                  toggle('passwordR');
+                  dispatch(loginUserData(password?.value));
+                }}
+              />
             </div>
 
           </div>

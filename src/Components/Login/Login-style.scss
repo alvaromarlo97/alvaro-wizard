@@ -25,7 +25,7 @@ input[type=text]:focus{
 align-items: center;}
 .new-password-input{
     width: 15em;
-    height: 2em;
+    height: 3em;
 }
 .new-password-button{
     margin-left: -30px;
@@ -34,6 +34,14 @@ align-items: center;}
 }
 input[type=password]:focus{
     outline-color: $light-green-color;
+}
+.password-security{
+    display:flex;
+    position: relative;
+    width: 204px;
+    height: 8px;
+    margin-left: 2px;
+    margin-top: -10px;
 }
 .clue-text-container{
     display: flex;

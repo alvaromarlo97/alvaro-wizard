@@ -12,9 +12,10 @@ export default function loadAge(validation: any) {
 }
 export function loginUserData(userData: any) {
   return (dispatch : any) => {
+    const User = userData;
     dispatch({
       type: actionTypes.LOAD_USER,
-      data: userData,
+      data: User,
 
     });
   };
