@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import loadAge from '../../redux/actions/login-creators';
+import loadAge, { loadPage } from '../../redux/actions/login-creators';
 
 import './Age-check-style.scss';
 
@@ -9,6 +9,10 @@ export default function AgeCheck() {
   const [checked, setChecked] = useState(false);
   const handleClick = () => setChecked(!checked);
   const dispatch = useDispatch();
+  const handleNextPage = () => {
+    dispatch(loadAge(checked));
+    dispatch(loadPage(2));
+  };
 
   return (
     <div className="container">
@@ -35,7 +39,7 @@ export default function AgeCheck() {
       <Link to="/login">
         <input
           type="button"
-          onClick={() => dispatch(loadAge(checked))}
+          onClick={() => handleNextPage()}
           value="Next"
           className="nextPage"
           disabled={!checked}
