@@ -119,10 +119,7 @@ export default function Login() {
             </div>
 
           </div>
-          <input type="text" maxLength={60} className="clue-input" id="message" />
-          <div className="clue-input-counter" id="counter">
-            Max60
-          </div>
+          <input type="text" maxLength={60} className="clue-input" id="message" placeholder="Max 60 caracteres" />
 
         </div>
         <div className="navigation-container">
