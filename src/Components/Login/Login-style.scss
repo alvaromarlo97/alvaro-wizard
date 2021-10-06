@@ -1,4 +1,5 @@
 @import '../../styles/base.scss';
+$bg-img: '../../assets/img/eye.png';
 .main-container{
     display: flex;
     flex-direction: column;
@@ -28,9 +29,30 @@ align-items: center;}
     height: 3em;
 }
 .new-password-button{
-    margin-left: -30px;
+    margin-left: -35px;
     width: 2em;
     height: 2em;
+    background-image: url('../../assets/img/eye.png');
+    background-color: #FFFFFF;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.new-password-button-private{
+    margin-left: -35px;
+    width: 2em;
+    height: 2em;
+    background-image: url('../../assets/img/private.png');
+    background-color: #FFFFFF;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 input[type=password]:focus{
     outline-color: $light-green-color;

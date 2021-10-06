@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-useless-escape */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -5,18 +6,21 @@ import { loginUserData } from '../../redux/actions/login-creators';
 import './Login-style.scss';
 
 export default function Login() {
-  // const data = useSelector((store : any) => store?.Age);
   const password : any = document.getElementById('password');
-
   const dispatch = useDispatch();
   const userData: any = useSelector((store : any) => store?.User);
   const [userPassword, setUserPassword] = useState('');
   useEffect(() => {
     setUserPassword(password?.value);
   }, []);
-  function toggle(id : string):void {
+  function toggle(id : string, buttonId:any):void {
     const input : any = document.getElementById(id);
-
+    const button : any = document.getElementById(buttonId);
+    if (button.classList.contains('new-password-button')) {
+      button.className = 'new-password-button-private';
+    } else if (button.classList.contains('new-password-button-private')) {
+      button.className = 'new-password-button';
+    }
     if (input.type === 'password') {
       input.type = 'text';
     } else {
@@ -47,6 +51,7 @@ export default function Login() {
       strengthBadge.style.display = 'block';
     } else {
       strengthBadge.style.display = 'none';
+      password.value = userData;
     }
     dispatch(loginUserData(password?.value));
     strengthBadge.style.display = 'block';
@@ -72,19 +77,29 @@ export default function Login() {
                 id="password"
                 onChange={(() => StrengthChecker(userData))}
               />
-              <button type="button" className="new-password-button" onClick={() => toggle('password')} />
+              <button
+                type="button"
+                id="eye-button"
+                className="new-password-button"
+                onClick={() => toggle('password', 'eye-button')}
+              />
             </div>
             <div className="password-security" id="security-check" />
           </div>
           <div className="new-password">
             <h3 className="new-password-text">Repite tu Contraseña</h3>
             <div className="new-password-container">
-              <input type="password" className="new-password-input" id="passwordR" />
+              <input
+                type="password"
+                className="new-password-input"
+                id="passwordR"
+              />
               <button
                 type="button"
+                id="eye-buttonR"
                 className="new-password-button"
                 onClick={() => {
-                  toggle('passwordR');
+                  toggle('passwordR', 'eye-buttonR');
                   dispatch(loginUserData(password?.value));
                 }}
               />
