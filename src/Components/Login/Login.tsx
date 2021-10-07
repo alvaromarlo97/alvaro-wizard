@@ -41,6 +41,7 @@ export default function Login() {
   const strongPassword : any = new RegExp('(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
   const mediumPassword : any = new RegExp(/[A-Z]/);
   const numberPassword : any = new RegExp(/[0-9]/);
+  const minMaxPassword : any = new RegExp(/.{8,}/);
 
   function StrengthChecker(PasswordParameter : any) {
     if (strongPassword.test(PasswordParameter)) {
@@ -75,6 +76,8 @@ export default function Login() {
       error.innerHTML = 'La contraseña debe de contener una mayúscula';
     } else if (!numberPassword.test(Password)) {
       error.innerHTML = 'La contraseña debe de contener un numero';
+    } else if (!minMaxPassword.test(Password)) {
+      error.innerHTML = 'La contraseña debe de contener 8 caracteres mínimo';
     } else if (!passwordR.value) {
       error.innerHTML = 'Es necesario repetir la contraseña';
     } else if (password.value !== passwordR.value) {
