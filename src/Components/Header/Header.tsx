@@ -10,10 +10,10 @@ export default function Header() {
   const num3 : any = 2;
 
   if (page === 2) {
-    num1 = 'x';
+    num1 = '✓';
   } if (page === 3) {
-    num1 = 'x';
-    num2 = 'x';
+    num1 = '✓';
+    num2 = '✓';
   }
   return (
     <div className="header">

@@ -133,7 +133,7 @@ export default function Login() {
 
             </button>
           </Link>
-          <Link to="/login">
+          <Link to="/success">
             <button
               type="button"
               className="next"
