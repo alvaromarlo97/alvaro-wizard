@@ -7,9 +7,11 @@ import { loginUserData, loadPage } from '../../redux/actions/login-creators';
 import './Login-style.scss';
 
 export default function Login() {
+  const userName : any = document.getElementById('userName');
   const password : any = document.getElementById('password');
+  const clue : any = document.getElementById('message');
   const dispatch = useDispatch();
-  const userData: any = useSelector((store : any) => store?.User);
+  const userData: any = useSelector((store : any) => store?.User.Password);
   const [userPassword, setUserPassword] = useState('');
   useEffect(() => {
     setUserPassword(password?.value);
@@ -54,7 +56,7 @@ export default function Login() {
       strengthBadge.style.display = 'none';
       password.value = userData;
     }
-    dispatch(loginUserData(password?.value));
+    dispatch(loginUserData(userName?.value, password?.value, clue?.value));
     strengthBadge.style.display = 'block';
   });
 
@@ -66,7 +68,7 @@ export default function Login() {
       <div className="user-data">
         <div className="user-name">
           <h3 className="user-name-text">Crea tu Usuario</h3>
-          <input type="text" className="user-name-input" placeholder="Introduce tu usuario" />
+          <input type="text" className="user-name-input" placeholder="Introduce tu usuario" id="userName" />
         </div>
         <div className="user-password">
           <div className="new-password">
@@ -102,7 +104,7 @@ export default function Login() {
                 className="new-password-button"
                 onClick={() => {
                   toggle('passwordR', 'eye-buttonR');
-                  dispatch(loginUserData(password?.value));
+                  dispatch(loginUserData(userName?.value, password?.value, clue?.value));
                 }}
               />
             </div>

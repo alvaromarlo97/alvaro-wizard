@@ -10,9 +10,13 @@ export default function loadAge(validation: any) {
     });
   };
 }
-export function loginUserData(userData: any) {
+export function loginUserData(userName : string, userPassword: string, userClue : string) {
   return (dispatch : any) => {
-    const User = userData;
+    const User = {
+      User: userName,
+      Password: userPassword,
+      Clue: userClue,
+    };
     dispatch({
       type: actionTypes.LOAD_USER,
       data: User,
