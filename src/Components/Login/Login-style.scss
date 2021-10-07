@@ -106,3 +106,8 @@ input[type=password]:focus{
 .back:hover,.next:hover{
     box-shadow: $light-green-color 0px 5px 15px;
 }
+.error-info{
+    display: flex;
+    font-weight:normal;
+    color:$red;
+}
