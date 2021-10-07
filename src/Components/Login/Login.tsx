@@ -40,6 +40,7 @@ export default function Login() {
   const strengthBadge : any = document.getElementById('security-check');
   const strongPassword : any = new RegExp('(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
   const mediumPassword : any = new RegExp(/[A-Z]/);
+  const numberPassword : any = new RegExp(/[0-9]/);
 
   function StrengthChecker(PasswordParameter : any) {
     if (strongPassword.test(PasswordParameter)) {
@@ -72,6 +73,8 @@ export default function Login() {
       error.innerHTML = 'Es necesario una contraseña';
     } else if (!mediumPassword.test(Password)) {
       error.innerHTML = 'La contraseña debe de contener una mayúscula';
+    } else if (!numberPassword.test(Password)) {
+      error.innerHTML = 'La contraseña debe de contener un numero';
     } else if (!passwordR.value) {
       error.innerHTML = 'Es necesario repetir la contraseña';
     } else if (password.value !== passwordR.value) {
