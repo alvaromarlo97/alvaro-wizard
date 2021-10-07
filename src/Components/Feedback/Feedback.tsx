@@ -27,6 +27,7 @@ export default function Feedback() {
         <Link to="/login">
           <button
             type="button"
+            data-testid="feedback-button-back"
             className="back"
             onClick={() => {
               dispatch(loadPage(2));
@@ -39,6 +40,7 @@ export default function Feedback() {
         <Link to="/">
           <button
             type="button"
+            data-testid="feedback-button-init"
             className="next"
             onClick={() => {
               dispatch(loadPage(1));
