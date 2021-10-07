@@ -9,7 +9,6 @@ import Header from './Components/Header/Header';
 import Login from './Components/Login/Login';
 import AgeCheck from './Components/Age-check/Age-check';
 import Feedback from './Components/Feedback/Feedback';
-// import SecondPage from './pages/Second-Page/Second-Page';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/store';
 
