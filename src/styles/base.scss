@@ -8,3 +8,26 @@ $dark-green-color: #07542a;
 $white: #FFFFFF;
 $black: #000000;
 $red: red;
+
+$roboto:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+h1{
+    font-size: 1.5em;
+    font-weight:bolder;
+    font-family: $roboto;
+}
+h2{
+    font-size: 1.5em;
+    font-weight: normal;
+    font-family: $roboto;
+}
+h3{
+    font-size: 1.2em;
+    font-weight: normal;
+    font-family: $roboto;
+}
+p{
+    font-size: 1.2em;
+    font-weight: lighter;
+    font-family: $roboto;
+}

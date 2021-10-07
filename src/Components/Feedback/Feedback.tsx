@@ -3,14 +3,15 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import success from '../../assets/img/success.png';
 import { loadPage } from '../../redux/actions/login-creators';
+import './Feedback-style.scss';
 
 export default function Feedback() {
   const dispatch = useDispatch();
 
   return (
-    <>
-      <div className="feedback-container">
-        <img src={success} alt="success" srcSet="" />
+    <div className="feedback-container">
+      <div className="main-feedback-container">
+        <img className="feedback-image" src={success} alt="success" srcSet="" />
         <div className="feedback-text-container">
           <h1 className="main-feedback-text">¡La cuenta se creó correctamente!</h1>
           <p className="feedback-text">
@@ -22,7 +23,7 @@ export default function Feedback() {
           </p>
         </div>
       </div>
-      <div className="navigation-container">
+      <div className="navigation-container-feedback">
         <Link to="/login">
           <button
             type="button"
@@ -48,6 +49,6 @@ export default function Feedback() {
           </button>
         </Link>
       </div>
-    </>
+    </div>
   );
 }

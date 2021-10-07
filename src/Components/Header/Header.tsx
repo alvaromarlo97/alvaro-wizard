@@ -7,7 +7,7 @@ export default function Header() {
   const page: any = useSelector((store : any) => store?.Page);
   let num1 : any = 1;
   let num2 : any = 2;
-  const num3 : any = 2;
+  const num3 : any = 3;
 
   if (page === 2) {
     num1 = '✓';
@@ -18,7 +18,6 @@ export default function Header() {
   return (
     <div className="header">
       <div className="header-container">
-
         <p className="number">{num1}</p>
         <p className="number">{num2}</p>
         <p className="number">{num3}</p>

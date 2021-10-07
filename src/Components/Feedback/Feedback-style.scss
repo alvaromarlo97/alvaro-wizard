@@ -1,0 +1,32 @@
+@import '../../styles/base.scss';
+
+.feedback-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5em 0 5em;
+}
+.main-feedback-container{
+    width: 40em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em 5em 2em 5em;
+}
+.feedback-image{
+    width: 10em;
+    height: 10em;
+}
+.feedback-text-container{
+    width: 25em;
+}
+
+.navigation-container-feedback{
+    width: 40em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1em;
+}
