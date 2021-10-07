@@ -14,6 +14,8 @@ export default function Login() {
   const clue : any = document.getElementById('message');
   const error : any = document.getElementById('error-info');
   const passwordR : any = document.getElementById('passwordR');
+  const loading : any = document.getElementById('loading');
+
   const dispatch = useDispatch();
   const currentPassword: any = useSelector((store : any) => store?.User.Password);
   const currentUser: any = useSelector((store : any) => store?.User.User);
@@ -83,8 +85,11 @@ export default function Login() {
     } else if (password.value !== passwordR.value) {
       error.innerHTML = 'La contraseña debe coincidir';
     } else {
-      dispatch(loadPage(3));
-      history.push('/success');
+      loading.className = 'loading';
+      setTimeout(() => {
+        dispatch(loadPage(3));
+        history.push('/success');
+      }, 3000);
     }
   }
 
@@ -195,7 +200,7 @@ export default function Login() {
               }}
             >
               Siguiente
-
+              <div id="loading" />
             </button>
 
           </div>
