@@ -73,7 +73,7 @@ export default function Login() {
       userName.placeholder = 'Es necesario un nombre de usuario';
       error.innerHTML = 'Es necesario un nombre de usuario';
     } else if (!password.value) {
-      error.innerHTML = 'Es necesario una contraseña';
+      error.innerHTML = 'Es necesaria una contraseña';
     } else if (!mediumPassword.test(Password)) {
       error.innerHTML = 'La contraseña debe de contener una mayúscula';
     } else if (!numberPassword.test(Password)) {
