@@ -11,7 +11,10 @@ export default function Login() {
   const password : any = document.getElementById('password');
   const clue : any = document.getElementById('message');
   const dispatch = useDispatch();
-  const userData: any = useSelector((store : any) => store?.User.Password);
+  const currentPassword: any = useSelector((store : any) => store?.User.Password);
+  const currentUser: any = useSelector((store : any) => store?.User.User);
+  const currentClue: any = useSelector((store : any) => store?.User.Clue);
+
   const [userPassword, setUserPassword] = useState('');
   useEffect(() => {
     setUserPassword(password?.value);
@@ -32,7 +35,6 @@ export default function Login() {
   }
 
   const strengthBadge : any = document.getElementById('security-check');
-
   const strongPassword : any = new RegExp('(?=.*[A-Z])(?=.*[0-9])(?=.{8,})');
   const mediumPassword : any = new RegExp(/[A-Z]/);
 
@@ -54,7 +56,7 @@ export default function Login() {
       strengthBadge.style.display = 'block';
     } else {
       strengthBadge.style.display = 'none';
-      password.value = userData;
+      password.value = currentPassword;
     }
     dispatch(loginUserData(userName?.value, password?.value, clue?.value));
     strengthBadge.style.display = 'block';
@@ -68,7 +70,16 @@ export default function Login() {
       <div className="user-data">
         <div className="user-name">
           <h3 className="user-name-text">Crea tu Usuario</h3>
-          <input type="text" className="user-name-input" placeholder="Introduce tu usuario" id="userName" />
+          <input
+            type="text"
+            className="user-name-input"
+            maxLength={24}
+            value={currentUser}
+            placeholder="Introduce tu usuario"
+            id="userName"
+            onChange={(() => dispatch(loginUserData(userName?.value, password?.value, clue?.value))
+              )}
+          />
         </div>
         <div className="user-password">
           <div className="new-password">
@@ -79,7 +90,7 @@ export default function Login() {
                 className="new-password-input"
                 id="password"
                 maxLength={24}
-                onChange={(() => StrengthChecker(userData))}
+                onChange={(() => StrengthChecker(currentPassword))}
               />
               <button
                 type="button"
@@ -119,7 +130,16 @@ export default function Login() {
             </div>
 
           </div>
-          <input type="text" maxLength={60} className="clue-input" id="message" placeholder="Max 60 caracteres" />
+          <input
+            type="text"
+            maxLength={60}
+            className="clue-input"
+            id="message"
+            placeholder="Max 60 caracteres"
+            value={currentClue}
+            onChange={(() => dispatch(loginUserData(userName?.value, password?.value, clue?.value))
+)}
+          />
 
         </div>
         <div className="navigation-container">
