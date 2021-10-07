@@ -1,5 +1,12 @@
 @import '../../styles/base.scss';
 
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 5em 0 5em;
+}
 .check-description{
     display: flex;
     flex-direction: row;
@@ -41,4 +48,9 @@ input[type="checkbox"] {
     box-shadow: $light-green-color 0px 5px 15px;
 
   }
+}
+.button-container{
+  display: flex;
+  justify-content: flex-end;
+  width: 40em;
 }

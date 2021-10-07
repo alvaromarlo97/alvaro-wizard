@@ -36,16 +36,18 @@ export default function AgeCheck() {
           sus datos según a política de protección de datos vigente.
         </p>
       </div>
-      <Link to="/login">
-        <input
-          type="button"
-          onClick={() => handleNextPage()}
-          value="Next"
-          className="nextPage"
-          disabled={!checked}
-        />
+      <div className="button-container">
+        <Link to="/login">
+          <input
+            type="button"
+            onClick={() => handleNextPage()}
+            value="Next"
+            className="nextPage"
+            disabled={!checked}
+          />
 
-      </Link>
+        </Link>
+      </div>
     </div>
   );
 }
