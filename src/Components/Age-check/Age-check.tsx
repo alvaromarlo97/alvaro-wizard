@@ -45,7 +45,6 @@ export default function AgeCheck() {
             className="nextPage"
             disabled={!checked}
           />
-
         </Link>
       </div>
     </div>

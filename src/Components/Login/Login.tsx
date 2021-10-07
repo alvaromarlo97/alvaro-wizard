@@ -176,7 +176,6 @@ export default function Login() {
 )
 }
             />
-
           </div>
           <div className="navigation-container">
             <Link to="/">
@@ -202,11 +201,9 @@ export default function Login() {
               Siguiente
               <div id="loading" />
             </button>
-
           </div>
         </div>
         <p id="error-info" className="error-info" />
-
       </div>
     </>
   );

@@ -34,7 +34,6 @@ export default function Feedback() {
             }}
           >
             Atras
-
           </button>
         </Link>
         <Link to="/">
@@ -47,7 +46,6 @@ export default function Feedback() {
             }}
           >
             Volver al inicio
-
           </button>
         </Link>
       </div>
